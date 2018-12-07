@@ -9,6 +9,11 @@
 
 # Features
 
+- Create new tags for discussions in the admin panel ( account Manage section ).
+- Create new discussions in specific tags.
+- Reply in discussions.
+- User avatars are powered by Gravatar ! :D
+
 # Screenshots
 
 # Prerequisites
