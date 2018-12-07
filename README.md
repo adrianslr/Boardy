@@ -31,3 +31,7 @@ This easy it is! The app will guide you trough the installation.
 # Usage
 
 *npm start & Voila !*
+
+# Attention
+
+*Not good to production use, no security & validations were made. *
