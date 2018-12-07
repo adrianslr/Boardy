@@ -34,4 +34,4 @@ This easy it is! The app will guide you trough the installation.
 
 # Attention
 
-*Not good to production use, no security & validations were made. *
+*Not good to production use, no security & validations were made.*
