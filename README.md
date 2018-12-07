@@ -2,9 +2,10 @@
 *Boardy is an university project - Simple Discussion CMS made with modern tech.*
 
 # Boardy is powered by:
-*- AngularJS
+
+- AngularJS
 - MongoDB ( Parse Backend )
-- Bootstrap*
+- Bootstrap
 
 # Features
 
