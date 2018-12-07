@@ -16,7 +16,14 @@
 
 # Screenshots
 
-[Imgur](https://i.imgur.com/9gkTyWM.png)
+![Image]
+(https://i.imgur.com/9gkTyWM.png)
+![Image]
+(https://i.imgur.com/JffUNPJ.png)
+![Image]
+(https://i.imgur.com/9hqbyGy.png)
+![Image]
+(https://i.imgur.com/kk2unFP.png)
 
 # Prerequisites
 
