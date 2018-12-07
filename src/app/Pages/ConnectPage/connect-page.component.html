@@ -1,0 +1,87 @@
+<app-header [isInstall]=false></app-header>
+
+<div class="bcontainer container-install">
+  <div class="scontainer scontainer-install">
+
+    <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </h6>
+
+    <br>
+
+    <ul class="nav nav-tabs" id="accTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link nav-link-acc active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-acc" id="signup-tab" data-toggle="tab" href="#signup" role="tab" aria-controls="signup" aria-selected="false">Signup</a>
+      </li>
+    </ul>
+
+    <br>
+  
+    <div class="tab-content" id="accTab">
+      <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login">
+        <div class="row"> 
+          <div class="col-6">
+            <form novalidate #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+              <div class="form-group row">
+                <label class="whitelabel col-sm-2 col-form-label col-form-label-md">Username</label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="username" id="username" name="username" type="text" class="form-control form-control-md" placeholder="John Lithgow">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="whitelabel col-sm-2 col-form-label col-form-label-md">Password</label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="password" id="password" name="password" type="password" class="form-control form-control-md" placeholder="******">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-light">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="row"> 
+          <div class="col-6">
+            <form novalidate #signupForm="ngForm" (ngSubmit)="onSignup(signupForm)">
+              <div class="form-group row">
+                <label class="whitelabel col-sm-2 col-form-label col-form-label-md">Username</label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="username" id="username" name="username" type="text" class="form-control form-control-md" placeholder="John Lithgow">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                  <label class="whitelabel col-sm-2 col-form-label col-form-label-md">Email</label>
+                  <div class="col-sm-10">
+                    <input [(ngModel)]="email" id="email" name="email" type="email" class="form-control form-control-md" placeholder="John@Lithgow.Cool">
+                  </div>
+                </div>
+
+              <div class="form-group row">
+                <label class="whitelabel col-sm-2 col-form-label col-form-label-md">Password</label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="password" id="password" name="password" type="password" class="form-control form-control-md" placeholder="******">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="whitelabel col-sm-2 col-form-label col-form-label-md">Repeat</label>
+                <div class="col-sm-10">
+                  <input [(ngModel)]="password2" id="password2" name="password2" type="password" class="form-control form-control-md" placeholder="******">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-light">Signup</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+  </div>
+</div>

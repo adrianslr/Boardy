@@ -1,0 +1,67 @@
+<app-header [isInstall]=false></app-header>
+
+<div class="bcontainer container-content">
+    <div class="scontainer">
+
+    <div class="row">
+      <div class="col-2">
+        <button (click)="startATalk()" type="button" class="btn btn-danger btn-block">Start a Talk</button>
+        
+        <br><br>
+        
+        <h5><span (click)="allTalks()" class="active-tag all-talks badge btn-block"><i class="fa fa-comment"></i> All Talks</span></h5>
+        
+        <br>
+
+
+        <h5 *ngFor="let tag of tagList; let i = index;">
+            <span (click)="tagTalk(i, $event)" [style.background-color]="'#' + tag.color" class="talk-tag badge btn-block">{{ tag.name }}</span>
+        </h5>
+
+      </div>
+      
+      <div class="col">
+        <div class="results" 
+                            infinite-scroll 
+                            [infiniteScrollDistance]="scrollDistance"
+                            [infiniteScrollThrottle]="throttle"
+                            (scrolled)="onScrollDown()">
+          <ul class="list-group list-group-flush">
+            <li (click)="clickedTalk(i)" class="list-group-item talk-item" *ngFor="let talk of talkList; let i = index;">
+              <app-talk [talk]=talk></app-talk>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    </div>
+  </div>
+
+  <button id="openStartTalkModal" [hidden]="true" data-toggle="modal" data-target="#topicModal">boardy is heaven</button>
+  <div class="modal fade" id="topicModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Start a new Talk</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form novalidate #talkForm="ngForm" (ngSubmit)="onSubmit(talkForm)">
+          <div class="modal-body">
+            <div class="form-group">
+              <input [(ngModel)]="title" id="title" name="title" type="text" class="form-control form-control-md" placeholder="Talk title..">
+              <br>
+              <textarea [(ngModel)]="body" id="body" name="body" class="form-control" rows="10" placeholder="Talk body.."></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger">Start</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

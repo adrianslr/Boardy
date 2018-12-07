@@ -1,0 +1,12 @@
+<div class="bcontainer top-zone">
+  <div class="scontainer">
+    <div class="row">
+        <div class="col col-logo" (click)="logoClicked()">
+          <span class="logo">{{ logoTitle }}</span>
+        </div>
+        <div *ngIf="!isInstall" class="col col-account">
+          <button (click)="accountClicked()" class="btn btn-light"><i class="fa fa-user"></i> Account</button>
+        </div>
+      </div>
+  </div>
+</div>

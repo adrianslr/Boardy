@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-1">
+    <div [style.background-image]="'url(' + talk.author.avatar + ')'" class="border border-secondary rounded-circle avatar"></div>
+  </div>
+  <div class="col">
+    {{ talk.title | limitTo : 50 }}
+    <p class="h6"><small class="text-muted"><i class="fa fa-reply"></i> &nbsp; <b>{{ talk.author.username }}</b> authored on {{ talk.createdAt | date:'medium' }}</small></p>
+
+    <p class="h6"><small class="text-muted">{{ talk.body | limitTo : 70 }} </small></p>
+  </div>
+  <div class="col-3 col-info">
+    <span [style.background-color]="'#' + talk.tag.color" class="talk-tag badge">{{ talk.tag.name }}</span>
+  </div>
+</div>

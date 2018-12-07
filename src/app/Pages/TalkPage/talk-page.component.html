@@ -1,0 +1,74 @@
+<app-header [isInstall]=false></app-header>
+
+<div [style.background-color]="'#' + talk.tag.color"  class="bcontainer container-discuss">
+    <div class="scontainer">
+      <h5 class="post-tag"><span class="badge badge-light"><i class="fa fa-thumbtack post-pin"></i></span> &nbsp; <small>{{ talk.tag.name }}</small></h5>
+      <h5><b>{{ talk.title }}</b></h5>
+    </div>
+</div>
+
+<div class="bcontainer">
+  <div class="scontainer">
+    <div class="row">
+      <div class="col-2">
+        <div [style.background-image]="'url(' + talk.author.avatar + ')'" class="border border-light rounded-circle avatar-big"></div>
+      </div>
+      <div class="col">
+        <p class="h6">{{ talk.author.username }} <small class="text-muted">authored on {{ talk.createdAt | date:'medium' }}</small></p>
+        <p>
+          {{ talk.body }}
+        </p>
+      </div>
+      <div class="col-2">
+        <button (click)="leaveReply()" id="sticker" type="button" class="btn btn-danger btn-block fixed-button">Leave a reply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<hr id="repliesHr">
+<br>
+
+<div class="bcontainer">
+    <div class="scontainer">
+        
+        <div class="results" 
+                      infinite-scroll 
+                      [infiniteScrollDistance]="scrollDistance"
+                      [infiniteScrollThrottle]="throttle"
+                      (scrolled)="onScrollDown()">
+
+          <div *ngFor="let reply of replyList">
+              <app-reply [reply]=reply></app-reply>
+          </div>
+        </div>
+    </div>
+</div>
+
+<br><br>
+
+<button id="openReplyModal" [hidden]="true" data-toggle="modal" data-target="#replyModal">boardy is heaven</button>
+  <div class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Leave a reply</h5>
+          <button id="closeReplyModal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form novalidate #talkForm="ngForm" (ngSubmit)="onSubmit(talkForm)">
+          <div class="modal-body">
+            <div class="form-group">
+              <textarea [(ngModel)]="body" id="body" name="body" class="form-control" rows="10" placeholder="Reply body.."></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger">Reply</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

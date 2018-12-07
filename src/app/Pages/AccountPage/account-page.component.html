@@ -1,0 +1,55 @@
+<app-header [isInstall]=false></app-header>
+
+<div class="bcontainer">
+  <div class="scontainer">
+      
+    <br>
+    <button (click)="logout()" class="btn btn-danger">Logout</button>
+
+    <div *ngIf="currentUserIsAdmin; else simpleUser">
+      <br><br>
+      
+      <h5>Ahoy admin ;D</h5>
+      <br><br>
+      <h5>Tags</h5>
+      <br>
+      
+      <form novalidate #tagForm="ngForm" (ngSubmit)="onSubmit(tagForm)" class="form-inline">
+        <input [(ngModel)]="name" id="name" name="name" type="text" class="form-control mb-2 mr-sm-2" placeholder="Tag name">
+      
+        <div class="input-group mb-2 mr-sm-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">#</div>
+          </div>
+          <input [(ngModel)]="color" id="color" name="color" type="text" class="form-control" placeholder="hex color">
+        </div>
+      
+        <button type="submit" class="btn btn-primary mb-2">Add</button>
+      </form>
+
+      <br>
+
+      <div class="row">
+        <div class="col-5">
+          <ul class="list-group">
+
+              <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let tag of tagList; let i = index" (click)="deleteTag(i)">
+                {{ tag.name }}
+                <button type="button" class="btn btn-danger btn-sm">delete</button>
+              </li>
+          </ul>
+        </div>
+      </div>
+      <br>
+      <br>
+    </div>
+    
+    <ng-template #simpleUser>
+      <br>
+      <br>
+      <h5>Ahoy sailor,</h5>
+      <br>
+      <h5>As a simple user, you can't do to much here, so go and clean the deck!</h5>
+    </ng-template>
+  </div>
+</div>

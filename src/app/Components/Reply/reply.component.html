@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-1">
+    <div [style.background-image]="'url(' + reply.author.avatar + ')'" class="border border-light rounded-circle avatar"></div>
+  </div>
+  <div class="col-9">
+    <p class="h6">{{ reply.author.username }} <small class="text-muted">replied on {{ reply.createdAt | date:'medium' }}</small></p>
+    <p>
+      {{ reply.body }}
+    </p>
+  </div>
+
+</div>
+<br>
