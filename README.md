@@ -16,6 +16,8 @@
 
 # Screenshots
 
+[Imgur](https://i.imgur.com/9gkTyWM.png)
+
 # Prerequisites
 
 -   **AngularJS** - latest version
