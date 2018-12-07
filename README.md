@@ -16,14 +16,10 @@
 
 # Screenshots
 
-![Image]
-(https://i.imgur.com/9gkTyWM.png)
-![Image]
-(https://i.imgur.com/JffUNPJ.png)
-![Image]
-(https://i.imgur.com/9hqbyGy.png)
-![Image]
-(https://i.imgur.com/kk2unFP.png)
+<img src="https://i.imgur.com/9gkTyWM.png">
+<img src="https://i.imgur.com/JffUNPJ.png">
+<img src="https://i.imgur.com/9hqbyGy.png">
+<img src="https://i.imgur.com/kk2unFP.png">
 
 # Prerequisites
 
